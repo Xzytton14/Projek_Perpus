@@ -41,6 +41,8 @@
         <textarea id="alamat" name="alamat"></textarea><br>
 
         <button type="submit">Kirim</button>
-    </form>
+    </form><br>
+
+    <a href="data.php">Lihat Data Anggota</a>
 </body>
 </html>

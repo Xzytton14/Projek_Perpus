@@ -41,6 +41,7 @@ $hasil = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id DESC");
         </tr>
         <?php }; ?>
     </tbody>
-    </table>
+    </table><br>    
+    <a href="form_anggota.php">Isi Form Kembali</a>
 </body>
 </html>
