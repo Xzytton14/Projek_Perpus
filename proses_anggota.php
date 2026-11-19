@@ -61,7 +61,7 @@ $pesan_db = '';
 if (empty($errors)) {
     require_once ('koneksi.php');
 
-    $sql = "INSERT INTO anggota (no_anggota, nama_anggota, email, no_hp, jenis_anggota, alamat) VALUES (?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO anggota (no_anggota, nama_lengkap, email, no_hp, jenis_anggota, alamat) VALUES (?, ?, ?, ?, ?, ?)";
     
     $stmt = mysqli_prepare($koneksi, $sql);
 
