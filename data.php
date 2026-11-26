@@ -15,6 +15,15 @@ $hasil = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id DESC");
 <body>
     <h1>Data Anggota</h1>
 
+    <?php if (isset($_GET['status']) && $_GET['status'] === 'diubah'): ?>
+        <p> class="sukses">Data anggota berhasil diperbarui!</p>
+    <?php endif; ?>
+
+    <?php
+    if (isset($_GET['status']) ?? $_GET['status'] === 'berhasil'):?>
+    <p>Data Berhasil Dihapus</p>
+    <?php endif; ?>
+
     <table border = '1'>
     <thead>
         <tr>
@@ -25,6 +34,8 @@ $hasil = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id DESC");
             <th>Nomor HP</th>
             <th>Jenis Anggota</th>
             <th>Alamat</th>
+            <th>Edit</th>
+            <th>Hapus</th>
         </tr>
     </thead>
     <tbody>
@@ -38,6 +49,15 @@ $hasil = mysqli_query($koneksi, "SELECT * FROM anggota ORDER BY id DESC");
             <td><?= htmlspecialchars($row['no_hp']); ?></td>
             <td><?= htmlspecialchars($row['jenis_anggota']); ?></td>
             <td><?= htmlspecialchars($row['alamat']); ?></td>
+            <td>
+                <form action="hapus.php" method="POST" onsubmit="Apakah yakin akan menghapus <?= htmlspecialchars($row['nama_lengkap'], ENT_QUOTES) ?>?">
+                    <input type="hidden" name="id" value="<?= $row['id']; ?>">
+                    <button type="submit">Hapus</button>
+                </form>
+            </td>
+            <td>
+                <a href="edit.php?id=<?= $row['id']; ?>">Edit</a>
+            </td>
         </tr>
         <?php }; ?>
     </tbody>
