@@ -1,8 +1,4 @@
 <?php
-// if ($_SERVER ['REQUEST_METHOD'] == 'GET') {
-//     header('Location: data.php');
-//     exit;
-// }
 $id = $_GET['id'];
 
 require_once('koneksi.php');
